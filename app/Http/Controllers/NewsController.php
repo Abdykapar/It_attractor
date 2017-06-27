@@ -41,7 +41,10 @@ class NewsController extends Controller
         News::create([
             'name' => $request['name'],
             'topic' => $request['topic'],
-            'content' => $request['content']
+            'content' => $request['content'],
+            'nameEn' => $request['nameEn'],
+            'topicEn' => $request['topicEn'],
+            'contentEn' => $request['contentEN']
         ])->save();
         return $this->index();
     }

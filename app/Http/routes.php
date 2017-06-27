@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -10,13 +9,8 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+use Illuminate\Support\Facades\Auth;
 
-use Illuminate\Support\Facades\App;
-
-Route::get('/', function () {
-    return view('welcome');
+Route::group(array('prefix' => 'api'), function() {
+    Route::resource('restful-apis','APIController');
 });
-Route::auth();
-Route::post('/home/{locale}', ['middleware' => 'language', 'uses' => 'HomeController@locale']);
-Route::get('/home', 'HomeController@index');
-Route::resource('news','NewsController');

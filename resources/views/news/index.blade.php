@@ -9,13 +9,23 @@
 
                     <div class="panel-body">
                         <a href="{{ route('news.create') }}" type="button" class="btn btn-primary">Create a new</a>
-                        @foreach($news as $new)
-                            <blockquote>
-                                <h5>{{ $new->topic }}</h5>
-                                <p>{{ $new->content }}</p>
-                                <footer> <cite title="Source Title">{{ $new->name }}</cite></footer>
-                            </blockquote>
-                        @endforeach
+                        @if(App::isLocale('ru'))
+                            @foreach($news as $new)
+                                <blockquote>
+                                    <h5>{{ $new->topic }}</h5>
+                                    <p>{{ $new->content }}</p>
+                                    <footer> <cite title="Source Title">{{ $new->name }}</cite></footer>
+                                </blockquote>
+                            @endforeach
+                        @else
+                            @foreach($news as $new)
+                                <blockquote>
+                                    <h5>{{ $new->topicEn }}</h5>
+                                    <p>{{ $new->contentEn }}</p>
+                                    <footer> <cite title="Source Title">{{ $new->nameEn }}</cite></footer>
+                                </blockquote>
+                            @endforeach
+                        @endif
                     </div>
                 </div>
             </div>
