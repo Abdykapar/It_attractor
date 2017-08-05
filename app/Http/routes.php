@@ -18,7 +18,7 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 Route::get('/',function (){
-   return view('welcome');
+   return redirect(route('place.index'));
 });
 Route::resource('categories','CategoriesController');
 Route::get('categories/delete/{id}',['as'=>'categories.destroy','uses'=>'CategoriesController@delete']);
