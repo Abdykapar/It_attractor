@@ -13,9 +13,9 @@ class AddEnNewsTable extends Migration
     public function up()
     {
         Schema::table('news', function (Blueprint $table) {
-            $table->string('nameEn');
-            $table->string('topicEn');
-            $table->text('contentEn');
+            $table->string('nameEn')->nullable();
+            $table->string('topicEn')->nullable();
+            $table->text('contentEn')->nullable();
         });
     }
 

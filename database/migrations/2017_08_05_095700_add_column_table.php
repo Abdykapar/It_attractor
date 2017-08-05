@@ -13,7 +13,7 @@ class AddColumnTable extends Migration
     public function up()
     {
         Schema::table('places', function (Blueprint $table) {
-            $table->integer('reviews');
+            $table->integer('reviews')->nullable();
         });
     }
 
