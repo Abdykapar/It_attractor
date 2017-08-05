@@ -39,50 +39,40 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    Laravel
+                <a class="navbar-brand" href="{{ url('/place') }}">
+                    Coffee Critic
                 </a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Home</a></li>
-                </ul>
+
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
+
+
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
+                                Hello, {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                             </ul>
                         </li>
+                        <li><a href="{{ route('place.create') }}">Add new place</a></li>
                     @endif
                 </ul>
-                @if(App::isLocale('en'))
-
-                    <form method="post" action="/home/ru" class="navbar-form navbar-right">
-                        <input type="hidden" name="locale" value="ru">
-                        {{ csrf_field() }}
-                        <button type="submit" class="btn btn-primary">Ru</button>
+                <ul class="nav navbar-nav navbar-right" style="margin-top: 7px">
+                    <form CLASS="form-horizontal" method="post" action="#" >
+                        <input class="form-control" style="width: 100%;position: relative;float: right" type="text" name="search" placeholder="Search. . .">
                     </form>
-                @else
-                    <form method="post" action="/home/en" class="navbar-form navbar-right">
-                        <input type="hidden" name="locale" value="en">
-                        {{ csrf_field() }}
-                        <button type="submit" class="btn btn-primary">En</button>
-                    </form>
-
-                @endif
+                </ul>
             </div>
         </div>
     </nav>

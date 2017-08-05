@@ -8,7 +8,7 @@
                 <div class="panel-heading">Welcome</div>
 
                 <div class="panel-body">
-                    {{ trans('data.welcome') }}
+                    Your Application's Landing Page.
                 </div>
             </div>
         </div>
