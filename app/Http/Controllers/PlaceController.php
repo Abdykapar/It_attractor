@@ -7,6 +7,7 @@ use App\Place;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\File;
 
 class PlaceController extends Controller
 {
@@ -52,6 +53,7 @@ class PlaceController extends Controller
     public function update(Request $request,$id){
         $place = Place::find($id);
         if ($request->hasFile('photo')){
+            File::delete('files/'.$place->photo);
             $destinationPath = 'files'; // upload path
     //        $name = $request->file('photo')->getClientOriginalName();
             $extension = $request->file('photo')->getClientOriginalExtension(); // getting image extension
