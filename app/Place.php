@@ -13,4 +13,8 @@ class Place extends Model
     public function category(){
         return $this->belongsTo('App\Category','categories_id');
     }
+
+    public function image(){
+        return $this->hasMany('App\Image','place_id');
+    }
 }

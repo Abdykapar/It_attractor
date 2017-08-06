@@ -12,13 +12,13 @@
                     @endforeach
                 </h4>
                 @foreach($places as $place)
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
 
-                <div class="panel panel-default">
-                    <div class="panel-heading">
+                <div class="thumbnail">
+                    <a href="{{ route('place.show',$place->id) }}">
                         <img src="/files/{{ $place->photo }}" class="img img-responsive" style="height: 200px; width: auto">
-                    </div>
-                    <div class="panel-body">
+                    </a>
+                    <div class="caption">
                         <a href="{{ route('place.show',$place->id) }}">{{ $place->title }}</a><br>
                         <span class="glyphicon glyphicon-heart"></span><br>
                         ({{ $place->reviews }} reviews)<br>

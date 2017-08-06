@@ -32,4 +32,5 @@ Route::get('place/delete/{id}',['as'=>'place.destroy','uses'=>'PlaceController@d
 Route::post('place',['as'=>'place.store','uses'=>'PlaceController@store']);
 Route::post('place/{id}',['as'=>'place.update','uses'=>'PlaceController@update']);
 
+Route::post('place/add',['as'=>'image.add','uses'=>'ImageController@add']);
 

@@ -10,6 +10,6 @@ class Category extends Model
     protected $fillable = ['name'];
 
     public function place(){
-        return $this->hasMany('App\Place','id');
+        return $this->hasMany('App\Place','categories_id');
     }
 }
